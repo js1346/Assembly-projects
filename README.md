@@ -83,9 +83,7 @@ Output after 4 iterations: `ABAABABA`
 
 ---
 
-## Author
-**Jakub Skalany**  
-Computer Science and Mathematics (JSIM) Student at the University of Warsaw
+
 ## Author
 **Jakub Skalany**  
 Computer Science and Mathematics (JSIM) Student at the University of Warsaw
