@@ -3,9 +3,9 @@ LD       := ld
 ASMFLAGS := -f elf64 -w+all -w+error -w-unknown-warning -w-reloc-rel
 LDFLAGS  := -pie -I /lib64/ld-linux-x86-64.so.2 --fatal-warnings
 
-TARGET   := discrete_fractal
-SRC      := discrete_fractal.asm
-OBJ      := discrete_fractal.o
+TARGET   := l_system_rewriter
+SRC      := l_system_rewriter.asm
+OBJ      := l_system_rewriter.o
 
 .PHONY: all clean test
 
