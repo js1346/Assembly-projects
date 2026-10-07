@@ -7,8 +7,8 @@ This repository contains two low-level systems programming projects written in *
 ## Repository Structure
 
     .
-    ├── 01-bigint-linear-eval/
-    │   ├── bigint_linear_eval.asm    # C-callable arbitrary-precision linear step module
+    ├── 01-mp-linear-step/
+    │   ├── mp_linear_step.asm        # C-callable arbitrary-precision linear step module
     │   └── Makefile
     ├── 02-lsystem-engine/
     │   ├── lsystem_engine.asm        # Standalone L-System iterative rewriting engine
@@ -17,7 +17,7 @@ This repository contains two low-level systems programming projects written in *
 
 ---
 
-## Project 1: Multi-Precision Linear Step Evaluator (`bigint_linear_eval.asm`)
+## Project 1: Multi-Precision Linear Step Evaluator (`mp_linear_step.asm`)
 
 ### Overview
 A C-callable assembly module that computes the $k$-th step of a linear extrapolation (or an arithmetic sequence) for signed big integers of arbitrary length ($64n$-bit two's complement representation):
@@ -36,7 +36,7 @@ Because $(A_1 - A_0)$ can require up to $64n + 1$ bits and multiplying by a 64-b
         int64_t  hi; // Returned in RDX (word n+2, sign-extended)
     } int128_t;
 
-    int128_t bigint_linear_eval(
+    int128_t mp_linear_step(
         uint64_t const *base, // rdi: Pointer to the base term (n 64-bit words, little-endian, two's complement)
         uint64_t const *next, // rsi: Pointer to the next term (n 64-bit words, little-endian, two's complement)
         uint64_t *out,        // rdx: Output buffer for the lower 64n bits of the resulting term
@@ -83,6 +83,9 @@ Output after 4 iterations: `ABAABABA`
 
 ---
 
+## Author
+**Jakub Skalany**  
+Computer Science and Mathematics (JSIM) Student at the University of Warsaw
 ## Author
 **Jakub Skalany**  
 Computer Science and Mathematics (JSIM) Student at the University of Warsaw
